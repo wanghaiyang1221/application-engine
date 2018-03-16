@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="no" default-lazy-init="false">
+
+    <bean id="httpServer" class="com.why.platform.framework.engine.http.HttpExporterServer"
+          lazy-init="false">
+        <property name="minThreads" value="${server.http.thread.min}"/>
+        <property name="maxThreads" value="${server.http.thread.max}"/>
+        <property name="host" value="${server.http.host}"/>
+        <property name="port" value="${server.http.port}"/>
+        <property name="useSession" value="${server.http.session.enable}"/>
+        <property name="defaultWebAppDir" value="${server.http.webapp.default.dir}"/>
+        <property name="defaultWebAppContextPath" value="${server.http.webapp.default.contextPath}"/>
+        <property name="webAppScanPackage" value="${server.http.webapp.scan.package}" />
+    </bean>
+
+
+
+</beans>
